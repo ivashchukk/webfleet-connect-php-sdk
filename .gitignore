@@ -1,0 +1,15 @@
+/vendor/
+/.phpunit.cache/
+/.php-cs-fixer.cache
+/coverage/
+/.env
+/.env.*
+!/.env.example
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Local reference material; not part of the distributable SDK.
+/webfleet.connect-doc-*.pdf
