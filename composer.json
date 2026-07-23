@@ -1,0 +1,55 @@
+{
+    "name": "webfleet-connect/php-sdk",
+    "description": "A typed community PHP SDK for the WEBFLEET.connect API",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "webfleet",
+        "fleet",
+        "gps",
+        "telematics"
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.9",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webfleet\\Connect\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webfleet\\Connect\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-integration": "phpunit --configuration phpunit.integration.xml --group integration",
+        "analyse": "phpstan analyse --memory-limit=1G --debug --no-progress",
+        "cs-check": "php-cs-fixer fix --dry-run --diff --sequential",
+        "check": [
+            "@test",
+            "@analyse",
+            "@cs-check"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": false,
+        "platform": {
+            "php": "8.3.0"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
